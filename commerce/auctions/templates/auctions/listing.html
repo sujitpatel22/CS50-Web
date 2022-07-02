@@ -1,0 +1,91 @@
+{% extends "auctions/layout.html" %}
+
+{% block title %}
+{{ listing.name }}
+{% endblock %}
+
+{% block body %}
+
+{% comment %}if the current loged in user is the winner, display the massage {% endcomment %}
+{% if winner %}
+<h3>{{ user.username }}<p>You have purchased the listing</p><h3>
+{% endif %}
+
+{% if listing.active == True %}
+
+{% comment %} Main listing body {% endcomment %}
+<div>
+    <h2>{{ listing.name }}</h2>
+    <hr>
+</div>
+
+<div class="main-body">
+<img src="{{ listing.img }}" alt = "{{ listing.name }}" height="400" width="600">
+<div>
+    {% comment %} form to bid the listing if the user is user is authenticated {% endcomment %}
+    <form action="/listing/{{ listing.id }}" method="POST">
+        <div>
+            <h4>Current Bid: &#8377 {{ listing_bid }}
+        {% if user.is_authenticated %}
+                <div>
+                {% comment %}If the user is the owner of the listing, display the 'close listing' button{% endcomment %}
+                {% if close_permit == True %}
+                <a href="/close/{{ listing.id }}">Close listing</a>
+                </div>
+
+                {% else %}
+                <h5>Make a bid: </h5> <input type ="number" name="new_bid" required>
+                <input type="submit" value="BID">
+                {% comment %} add to watchlist if not and remove if already added {% endcomment %}
+                <div>
+                    {% if listing.saved == False %}
+                        <a href="/do_watchlist/{{ listing.id }}">Add to watchlist</a>
+                    {% else %}
+                        <a href="/do_watchlist/{{ listing.id }}">Remove from watchlist</a>
+                    {% endif %}
+                </div>
+                {% endif %}
+                
+        {% else %}
+            <a href="/login.html">Login</a> to bid
+        {% endif %}
+        </div>
+    </form>
+</div>
+
+<div class="description">
+    <h5>Description:</h5>
+    <p>{{ listing.description }}</p>
+</div>
+    <h5>Category: </h5><p>{{ listing.category }}</p>
+
+    {% comment %} show and post a new comment {% endcomment %}
+<div class="comments">
+    <h4>Comments</h4>
+    {% if user.is_authenticated %}
+    <div>
+        <form action = "/comments/{{ listing.id }}" method = "POST">
+            <p> Make a new comment</p>
+            {% if massage %}
+            <p>{{ massage }}</p>
+            {% endif %}
+            <TextArea class="" name ="comment_in" height="250" width="700" placeholder="Add a new Comment..."></TextArea>
+            <input type = "submit" value="Post comment">
+        </form>
+    </div>
+    {% endif %}
+
+    {% for each in comments %}
+    <div>
+        <ul><li>Posted by {{ each.user }}: {{ each.text }}</li></ul>
+    </div
+    {% endfor %}
+</div>
+
+
+{% else %}
+<h3>The listing is no longer active</h3>.
+</div>
+{% endif %}
+
+{% endblock %}

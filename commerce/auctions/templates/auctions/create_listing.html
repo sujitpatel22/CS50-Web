@@ -1,0 +1,49 @@
+{% extends 'auctions/layout.html' %}
+
+{% block title %}
+Create new listing
+{% endblock %}
+
+{%block body%}
+<form action="/create_listing" method="POST">
+<div>
+    <div>
+        Name:
+        <input type ="text" name="name" required autofocus="on">
+    </div>
+    <div>
+        Description:
+        <input type ="text" name="description" required>
+    </div>
+    <div>
+        Image URL:
+        <input type="url" name="img" placeholder="Enter the url of the image">
+    </div>
+    <div>
+        Starting Bid:
+        <input type ="number" name="starting_bid" required>
+    </div>
+    <div>
+        Select Category:
+        <select name="category"> 
+            <option type="text" value="antiques">antiques</option>
+            <option type="text" value="electronics">electronics</option>
+            <option type="text" value="entertainment">entertainment</option>
+            <option type="text" value="sports">sports</option>
+            <option type="text" value="kitchenware">kitchenware</option>
+            <option type="text" value="toys">toys</option>
+            <option type="text" value="cosmetics">cosmetics</option>
+            <option type="text" value="academics">academics</option>
+            <option type="text" value="fantasy">fantasy</option>
+            <option type="text" value="furnitures">furnitures</option>
+            <option type="text" value="scientific">scientific</option>
+            <option type="text" value="accessories">accessories</option>
+            <option type="text" value="fashion">fashion</option>
+            <option type="text" value="other">other</option>
+        </select>
+    </div>
+        <input type ="submit" value="Create listing">
+</form>
+</div>
+    
+{% endblock %}

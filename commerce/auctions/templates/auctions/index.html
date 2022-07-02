@@ -1,0 +1,34 @@
+{% extends "auctions/layout.html" %}
+
+{% block title %}
+All Listings
+{% endblock %}
+
+{% block body %}
+    <h2>All Listings</h2>
+
+<div class="row row-cols-4">
+    {% for each in listings %}
+    <span class="col">
+        <form action="/listing/{{ each.id }}" method="GET">
+            <button id="{{ each.id }}" type="submit">
+                <div>
+                    <h3>{{ each.name }}</h3>
+                </div>
+                    <img src="{{ each.img }}" alt = "{{ each.name }}" height="165" width="300">
+                <div>
+                    <h4>Highest bid: &#8377 {{ each.bid }}
+                </div>
+                <div>
+                    <h5>Description:</h5>
+                    <p>{{ each.description }}</p>
+                </div>
+                    <h5>Category: {{ each.category }}</h5>
+            </button>
+        </form>
+    </span>
+</div>  
+    {%empty%}
+    <h4> No active listings</h4>
+    {% endfor %}
+{% endblock %}
