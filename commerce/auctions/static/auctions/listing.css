@@ -1,0 +1,53 @@
+.img {
+    width: 600px;
+    height: 400px;
+    border: 1px solid grey;
+    border-radius: 8px;
+}
+
+.btn-primary{
+    border: none;
+    margin: 5px 0;
+}
+.bid_btn {
+    width: 100px;
+}
+.watchlist_btn {
+    background-color: coral;
+    border: none;
+}
+.card-title {
+    margin: 20px 0;
+}
+.card-text {
+    font-weight: normal;
+    font-size: 18px;
+}
+.category {
+    margin: 20px 0;
+}
+.all_cmnts {
+    font-size: 14px;
+    margin: 1px 0px;
+}
+.comnt_area {
+    font-size: 14px;
+    border:none;
+    background-color: floralwhite;
+    height:50px;
+    width: 100%;
+    margin-left:auto;
+}
+.cmnt_btn {
+    background-color: fuchsia ;
+    display: block;
+}
+.cmnt_box {
+    height: 260px;
+    width: 500px;
+    margin: 10px 0;
+    padding:5px;
+    border: 1px solid grey;
+    border-radius: 4px;
+    scroll-behavior: smooth;
+}

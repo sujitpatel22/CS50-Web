@@ -1,0 +1,51 @@
+{% extends 'auctions/layout.html' %}
+
+{% block title %}
+Create new listing
+{% endblock %}
+
+{%block body%}
+<form class="row g-3" action="/create_listing" method="POST">
+<div>
+    <div class="col-md-12">
+        <h5 class="form-label">Name</h5>
+        <input class="form-control" type ="text" name="name" required autofocus="on">
+    </div>
+    <div class="col-md-12">
+        <h5 class="form-label">Description</h5>
+        <input class="form-control" type ="text" name="description" required>
+    </div>
+    <div class="col-md-12">
+        <h5 class="form-label">Image URL</h5>
+        <input class="form-control" type="url" name="img" placeholder="Enter the url of the image">
+    </div>
+    <div class="col-md-6">
+        <h5 class="form-label">Starting Bid</h5>
+        <input class="form-control" type ="number" name="starting_bid" required>
+    </div>
+    <div class="col-md-4">
+        <h5 class="form-label">Select category</h5>
+        <select class="form-select" name="category"> 
+            <option type="text" value="antiques">antiques</option>
+            <option type="text" value="electronics">electronics</option>
+            <option type="text" value="entertainment">entertainment</option>
+            <option type="text" value="sports">sports</option>
+            <option type="text" value="kitchenware">kitchenware</option>
+            <option type="text" value="toys">toys</option>
+            <option type="text" value="cosmetics">cosmetics</option>
+            <option type="text" value="academics">academics</option>
+            <option type="text" value="fantasy">fantasy</option>
+            <option type="text" value="furnitures">furnitures</option>
+            <option type="text" value="scientific">scientific</option>
+            <option type="text" value="accessories">accessories</option>
+            <option type="text" value="fashion">fashion</option>
+            <option type="text" value="other">other</option>
+        </select>
+    </div>
+    <div class="col-12">
+        <input class="btn btn-primary" type ="submit" value="Create listing">
+    </div>
+</form>
+</div>
+    
+{% endblock %}
