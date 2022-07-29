@@ -1,0 +1,36 @@
+{% extends "network/layout.html" %}
+{% load static %}
+{% block body %}
+
+    <div id="write_btn" class="views">
+        <h5>New Post</h5>
+        <button id="new_post" class="btn btn-primary">New Post</button>
+    </div>
+    
+    <div id ="write_view" class="views">
+        <form id="write_form">
+            Write a new post
+            <textArea id="write_body" class="form-control" required max-length="200"></textArea>
+            <input type="submit" class="btn btn-primary">
+        </form>
+    </div>
+
+    <div id="profile_view" class="views">
+        <img id="profile_img" src="./static/network/user.jpg" alt="profile-image">
+        <div class="user_info">
+            <div class="username"></div>
+            <div class="email"></div>
+        </div>
+        <div class="user_status">
+            <div class="followers"></div>
+            <div class="following"></div>
+        </div>
+        <div class="user_action">
+        <button class = "user_btn follow_btn"></button>
+        <button class = "user_btn block_btn"></button>
+        </div>
+    </div>
+
+    <div id ="posts_view" class="views">
+    </div>
+{% endblock %}

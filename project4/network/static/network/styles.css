@@ -1,0 +1,107 @@
+.body {
+    padding: 10px;
+}
+
+.navbar {
+    justify-content: center;
+}
+#write_btn {
+    border-radius: 10px;
+    padding: 15px;
+    width: 16%;
+    display: block;
+    margin: 1% auto 1% 27.8%;
+    box-shadow: 0px 0px 17px -5px grey;
+
+}
+
+#write_view {
+    display: block;
+    margin: 20px;
+    padding: 15px;
+    border: 2px solid black;
+    border-radius: 8px;
+}
+#write_form {
+    margin: 10px;
+}
+#write_body {
+    margin: 18px 0px 30px 0px;
+    height: 81px;
+}
+#edit_post {
+    margin: 0px 0px 6px 0px;
+}
+
+#profile_view {
+    width: 53%;
+    border-radius: 11px;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    align-items: center;
+    margin: 1% auto 1% auto;
+}
+#profile_img {
+    border: 1px solid grey;
+    border-radius: 10px;
+    width: 16%;
+    height: 16%;
+}
+.user_info {
+    border: 1px solid grey;
+    border-radius: 10px;
+    height: fit-content;
+    display: block;
+    width: auto;
+    margin: 0px 1% 0px 1%;
+    padding: 4% 3% 4% 3%;
+    box-shadow: 0px 0px 17px -5px grey;
+}
+.user_status {
+    border: 1px solid grey;
+    border-radius: 10px;
+    display: block;
+    height: fit-content;
+    width: auto;
+    padding: 4% 3% 4% 3%;
+    margin: 0px 1% 0px 1%;
+    box-shadow: 0px 0px 17px -5px grey;
+}
+.user_action {
+    width: 11%;
+}
+
+.user_btn {
+    color: white;
+    border: none;
+    border-radius: 5%;
+    background-color: rgb(255, 0, 128);
+    width: 100%;
+    padding: 5%;
+    margin: 8% auto 8% auto;
+}
+.block_btn {
+    background-color: red;
+}
+
+#posts_view {
+    width: 46%;
+    margin: 1% auto;
+}
+.post {
+    width: 96%;
+    border: none;
+    padding: 15px;
+    border-radius: 7px;
+    margin: 15px auto 15px auto;
+    box-shadow: 0px 0px 17px -5px grey;
+}
+.edit_btn {
+    color: white;
+    float: right;
+    background-color: orange;
+    border: none;
+    border-radius: 3px;
+    width: 14%;
+}
